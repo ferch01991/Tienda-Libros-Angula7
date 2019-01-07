@@ -1,0 +1,30 @@
+<section id="Login" class="mb-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_Login">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)">
+                <h1 class="h3 mb-3 font-weight-normal" *ngIf="!isError">Login</h1>
+                <div class="alert alert-danger" role="alert" *ngIf="isError">
+                  Something is wrong
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" name="password" required>
+                </div>
+                <button class="btn btn-large btn-primary btn-block">Login</button>
+                <div class="form-group">
+                  <a routerLink="/user/login" class="form-control login-user">Are you new ?</a>
+                </div>
+              </form>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
